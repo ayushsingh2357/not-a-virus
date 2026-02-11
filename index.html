@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message for You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            display: block;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .teddy-image, .teeth-image, .penguin-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .teddy-image, .teeth-image, .penguin-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Screen 1 -->
+        <div id="screen1" class="screen active">
+            <img src="uploaded-photo.jpg" alt="Profile" class="profile-image" id="profileImg">
+            <h1>Hey And, Kesi ho?</h1>
+            <button onclick="goToScreen2()">am beautiful</button>
+        </div>
+
+        <!-- Screen 2 -->
+        <div id="screen2" class="screen">
+            <svg class="teddy-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Teddy Bear SVG -->
+                <circle cx="100" cy="120" r="60" fill="#8B4513"/>
+                <circle cx="70" cy="80" r="25" fill="#A0522D"/>
+                <circle cx="130" cy="80" r="25" fill="#A0522D"/>
+                <circle cx="100" cy="100" r="45" fill="#CD853F"/>
+                <circle cx="85" cy="95" r="5" fill="#000"/>
+                <circle cx="115" cy="95" r="5" fill="#000"/>
+                <ellipse cx="100" cy="110" rx="8" ry="6" fill="#8B4513"/>
+                <path d="M 90 120 Q 100 125 110 120" stroke="#000" stroke-width="2" fill="none"/>
+                <circle cx="60" cy="140" r="20" fill="#A0522D"/>
+                <circle cx="140" cy="140" r="20" fill="#A0522D"/>
+                <ellipse cx="100" cy="170" rx="15" ry="20" fill="#CD853F"/>
+                <ellipse cx="80" cy="170" rx="15" ry="20" fill="#CD853F"/>
+            </svg>
+            <p class="center-text">That I know You are so pretty. But I also understand what situation you are into but trust me, I Am into this with you.</p>
+            <button onclick="goToScreen3()">Shut up Ayush</button>
+        </div>
+
+        <!-- Screen 3 -->
+        <div id="screen3" class="screen">
+            <svg class="teeth-image" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Smiling Teeth -->
+                <path d="M 20 50 Q 100 90 180 50" fill="none" stroke="#FF69B4" stroke-width="3"/>
+                <rect x="45" y="45" width="15" height="20" fill="white" stroke="#ddd" rx="2"/>
+                <rect x="65" y="45" width="15" height="20" fill="white" stroke="#ddd" rx="2"/>
+                <rect x="85" y="45" width="15" height="20" fill="white" stroke="#ddd" rx="2"/>
+                <rect x="105" y="45" width="15" height="20" fill="white" stroke="#ddd" rx="2"/>
+                <rect x="125" y="45" width="15" height="20" fill="white" stroke="#ddd" rx="2"/>
+            </svg>
+            <p class="center-text">Thoda Smile toh Krlo, sundar v lagogi AND AND AND agar jor se hasne lagi toh calories v burn ho jate hai, Ma'am</p>
+            <button onclick="goToScreen4()">Thik h has Lia</button>
+        </div>
+
+        <!-- Screen 4 -->
+        <div id="screen4" class="screen">
+            <p>So, I want you to know that everything in this world is solvable if people want to, we can address each problem and how we are gonna cater them, life and people are not linear, its full of ups and downs, no one knows what's gonna come but people do mistakes, learn, improve, grow and whatever it takes Am ready to do it with you. I know you aren't sure what kind of person I am and I want you to know that I ain't a perfect person but yeah we improve, thoda Mei thoda tum, people change according to each other because there is nothing like perfect, people make it perfect. I would be with you in all your ups and downs. Yes I know this thing is hard but Manjhi ne to pahad tod dia usse muskil toh nhi h kuch. I would do anything to fulfil your dreams and wishes, Han tumhe hamesha khush rakhunga and kabhi kabhi thode der k lie jyada Der nhi, rone ka man Kare toh v tumhare aansu pochunga. So, atlast I would like to conclude with, Relax, am with you in everything.</p>
+            <svg class="penguin-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Cute Penguin -->
+                <ellipse cx="100" cy="120" rx="50" ry="65" fill="#000"/>
+                <ellipse cx="100" cy="125" rx="35" ry="50" fill="white"/>
+                <circle cx="100" cy="70" r="30" fill="#000"/>
+                <circle cx="90" cy="65" r="5" fill="white"/>
+                <circle cx="110" cy="65" r="5" fill="white"/>
+                <circle cx="90" cy="65" r="3" fill="#000"/>
+                <circle cx="110" cy="65" r="3" fill="#000"/>
+                <path d="M 95 75 L 100 80 L 105 75" fill="#FFA500" stroke="#FFA500" stroke-width="2"/>
+                <ellipse cx="60" cy="110" rx="15" ry="35" fill="#000"/>
+                <ellipse cx="140" cy="110" rx="15" ry="35" fill="#000"/>
+                <ellipse cx="85" cy="180" rx="12" ry="8" fill="#FFA500"/>
+                <ellipse cx="115" cy="180" rx="12" ry="8" fill="#FFA500"/>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function goToScreen2() {
+            document.getElementById('screen1').classList.remove('active');
+            document.getElementById('screen2').classList.add('active');
+        }
+
+        function goToScreen3() {
+            document.getElementById('screen2').classList.remove('active');
+            document.getElementById('screen3').classList.add('active');
+        }
+
+        function goToScreen4() {
+            document.getElementById('screen3').classList.remove('active');
+            document.getElementById('screen4').classList.add('active');
+        }
+
+        // Load the uploaded image
+        window.addEventListener('DOMContentLoaded', function() {
+            const img = document.getElementById('profileImg');
+            img.src = '/mnt/user-data/uploads/WhatsApp_Image_2026-02-11_at_14_26_48.jpeg';
+        });
+    </script>
+</body>
+</html>
